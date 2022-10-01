@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+	<append xpath="/controls">
+		<text_outline>
+			<rect pos="${x},${y}" anchor="LeftTop">
+				<label depth="${depth}" pos="${distance},0" size="${size}" color="${shadow_color}" text_key="${text}" font_size="${font_size}"/>
+				<label depth="${depth}" pos="0,${distance}" size="${size}" color="${shadow_color}" text_key="${text}" font_size="${font_size}"/>
+				<label depth="${depth}" pos="-${distance},0" size="${size}" color="${shadow_color}" text_key="${text}" font_size="${font_size}"/>
+				<label depth="${depth}" pos="0,-${distance}" size="${size}" color="${shadow_color}" text_key="${text}" font_size="${font_size}"/>
+				<label depth="${depth}" pos="${distance},${distance}" size="${size}" color="${shadow_color}" text_key="${text}" font_size="${font_size}"/>
+				<label depth="${depth}" pos="${distance},-${distance}" size="${size}" color="${shadow_color}" text_key="${text}" font_size="${font_size}"/>
+				<label depth="${depth}" pos="-${distance},${distance}" size="${size}" color="${shadow_color}" text_key="${text}" font_size="${font_size}"/>
+				<label depth="${depth}" pos="-${distance},-${distance}" size="${size}" color="${shadow_color}" text_key="${text}" font_size="${font_size}"/>
+				<label depth="${depth+1}" pos="0,0" size="${size}" color="${text_color}" text_key="${text}" font_size="${font_size}" visible="{#always(true)}"/>
+			</rect>
+		</text_outline>
+	</append>
+</configs>

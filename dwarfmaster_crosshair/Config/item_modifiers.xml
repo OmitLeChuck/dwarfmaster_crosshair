@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+	<set xpath="/item_modifiers//property[@name='CrosshairOnAim']/@value">false</set>
+	<append xpath="/item_modifiers/item_modifier[@name='modGunLaserSight']">
+		<effect_group tiered="false">
+			<triggered_effect trigger="onSelfEquipStart" action="ModifyCVar" cvar="$laserSight" operation="set" value="1"/>
+			<triggered_effect trigger="onSelfEquipStop" action="ModifyCVar" cvar="$laserSight" operation="set" value="0"/>
+		</effect_group>
+	</append>
+</configs>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+	<append xpath="/buffs/buff[@name='buffStatusCheck01']">
+		<effect_group name="setExtraSpreadValue">
+			<triggered_effect trigger="onSelfEnteredGame" action="ModifyCVar" cvar="$extraSpread" operation="set" value="99999"/>
+			<triggered_effect trigger="onSelfPrimaryActionStart" action="ModifyCVar" cvar="$extraSpread" operation="set" value="0">
+				<requirement name="RoundsInMagazine" operation="GT" value="0"/>
+			</triggered_effect>
+			<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$extraSpread" operation="set" value="99999"/>
+		</effect_group>
+		<effect_group name="setExtraSpreadParameter">
+			<requirement name="!HoldingItemHasTags" tags="bow"/>
+			<requirement name="CVarCompare" cvar="$laserSight" operation="NotEquals" value="1"/>
+			<passive_effect name="SpreadDegreesVertical" operation="base_add" value="@$extraSpread"/>
+			<passive_effect name="SpreadDegreesHorizontal" operation="base_add" value="@$extraSpread"/>
+			<passive_effect name="SpreadDegreesVertical" operation="base_subtract" value="@$extraSpread" tags="perkTurrets"/>
+			<passive_effect name="SpreadDegreesHorizontal" operation="base_subtract" value="@$extraSpread" tags="perkTurrets"/>
+		</effect_group>
+	</append>
+</configs>
